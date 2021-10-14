@@ -1,18 +1,46 @@
 <div class="box" style="margin: 10px">
   <p class="title is-4">New Post</p>
-  <div class="field">
-    <label class="label">Title</label>
-    <div class="control">
-      <input type="text" class="input" placeholder="Your post title" />
+  <form #postForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input
+          type="text"
+          class="input"
+          name="title"
+          ngModel
+          #titleInput="ngModel"
+          required
+          minlength="5"
+          [ngClass]="{
+            'is-danger':
+              !titleInput.valid && (titleInput.dirty || titleInput.touched)
+          }"
+          placeholder="Your post title"
+        />
+        <p
+          *ngIf="!titleInput.valid && (titleInput.dirty || titleInput.touched)"
+          class="help is-danger"
+        >
+          Post title is required
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label">Body</label>
-    <div class="control">
-      <textarea class="textarea" placeholder="Your post body" ></textarea>
+    <div class="field">
+      <label class="label">Body</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          name="body"
+          ngModel
+          placeholder="Your post body"
+        ></textarea>
+      </div>
     </div>
-  </div>
-  <div class="control">
-      <button class="button is-link">Submit</button>
-  </div>
+    <div class="control">
+      <button type="submit" [disabled]="!postForm.valid" class="button is-link">
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
