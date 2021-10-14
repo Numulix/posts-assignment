@@ -29,8 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # TODO:
 
 - [x] Project created using Angular CLI
-- [ ] Delete the contents inside the HTML of the App component and edit it so that it says "Hello World" with the h3 tag
-- [ ] List all posts from the given API
+- [x] Delete the contents inside the HTML of the App component and edit it so that it says "Hello World" with the h3 tag
+- [x] List all posts from the given API
 - [ ] In the same application, create a PostComponent using Angular CLI
 - [ ] Configure the initialization of the component on the route /posts. Leave PostComponent to use the default HTML template
 - [ ] Create a method that calls an HTTP request to https://jsonplaceholder.typicode.com/ API, endpoint /posts using Angular Service (service needs to be shared)
