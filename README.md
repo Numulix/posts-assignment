@@ -31,10 +31,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [x] Project created using Angular CLI
 - [x] Delete the contents inside the HTML of the App component and edit it so that it says "Hello World" with the h3 tag
 - [x] List all posts from the given API
-- [ ] In the same application, create a PostComponent using Angular CLI
-- [ ] Configure the initialization of the component on the route /posts. Leave PostComponent to use the default HTML template
-- [ ] Create a method that calls an HTTP request to https://jsonplaceholder.typicode.com/ API, endpoint /posts using Angular Service (service needs to be shared)
-- [ ] Instead of the default HTML template list and show all posts returned from the service call. Attributes that need to be shown are "title" and "body". View can be done by choice (using tables or lists)
+- [x] In the same application, create a PostComponent using Angular CLI
+- [x] Configure the initialization of the component on the route /posts. Leave PostComponent to use the default HTML template
+- [x] Create a method that calls an HTTP request to https://jsonplaceholder.typicode.com/ API, endpoint /posts using Angular Service (service needs to be shared)
+- [x] Instead of the default HTML template list and show all posts returned from the service call. Attributes that need to be shown are "title" and "body". View can be done by choice (using tables or lists)
 - [ ] Create a form that adds a new post
 - [ ] Form should include controls for "title" and "body" (make the form as a seperate component) and a submit button
 - [ ] Use Form validation using built-in Angular validators
