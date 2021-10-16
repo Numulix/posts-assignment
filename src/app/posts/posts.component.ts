@@ -17,4 +17,8 @@ export class PostsComponent implements OnInit {
     this.postsService.getPosts().subscribe(posts => this.posts = posts);
   }
 
+  addPostToStart(post: Post) {
+    this.posts.unshift(post);
+  }
+
 }

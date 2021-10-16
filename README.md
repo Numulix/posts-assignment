@@ -35,12 +35,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [x] Configure the initialization of the component on the route /posts. Leave PostComponent to use the default HTML template
 - [x] Create a method that calls an HTTP request to https://jsonplaceholder.typicode.com/ API, endpoint /posts using Angular Service (service needs to be shared)
 - [x] Instead of the default HTML template list and show all posts returned from the service call. Attributes that need to be shown are "title" and "body". View can be done by choice (using tables or lists)
-- [ ] Create a form that adds a new post
-- [ ] Form should include controls for "title" and "body" (make the form as a seperate component) and a submit button
-- [ ] Use Form validation using built-in Angular validators
-- [ ] The submit button needs to be disabled if the form is invalid
-- [ ] Create a method in the service that adds a new post. Check the docs for making an API call.
-- [ ] Evaluate API response errors and display them
+- [x] Create a form that adds a new post
+- [x] Form should include controls for "title" and "body" (make the form as a seperate component) and a submit button
+- [x] Use Form validation using built-in Angular validators
+- [x] The submit button needs to be disabled if the form is invalid
+- [x] Create a method in the service that adds a new post. Check the docs for making an API call.
+- [x] Evaluate API response errors and display them
 - [ ] Create a page for displaying comments for the clicked post
 - [ ] Create a component called CommentsComponent, NOT using the Angular CLI, for displaying all comments for a single post
 - [ ] The route for instantiating this component would be /comments/post/{postId}, where postId should be inserted into the route

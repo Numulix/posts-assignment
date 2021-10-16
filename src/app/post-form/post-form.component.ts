@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { Post } from 'src/models';
 import { PostsService } from '../services/posts-service.service';
@@ -9,6 +9,7 @@ import { PostsService } from '../services/posts-service.service';
   styleUrls: ['./post-form.component.css']
 })
 export class PostFormComponent implements OnInit {
+  @Output() addNewPostToList = new EventEmitter<Post>();
 
   @ViewChild('postForm') postForm!: NgForm;
   public postData: Post = {
@@ -32,12 +33,17 @@ export class PostFormComponent implements OnInit {
         console.log(response);
         this.loading = false;
         this.success = true;
+        this.addPostToList(this.postData);
       },
       error => {
         console.log(error.message);
         this.loading = false;
       }
     )
+  }
+
+  addPostToList(post: Post) {
+    this.addNewPostToList.emit({...post});
   }
 
 }
