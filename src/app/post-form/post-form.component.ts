@@ -16,6 +16,7 @@ export class PostFormComponent implements OnInit {
     body: ''
   };
   public loading: boolean = false;
+  public success: boolean = false;
 
   constructor(private postsService: PostsService) { }
 
@@ -30,6 +31,7 @@ export class PostFormComponent implements OnInit {
       response => {
         console.log(response);
         this.loading = false;
+        this.success = true;
       },
       error => {
         console.log(error.message);
