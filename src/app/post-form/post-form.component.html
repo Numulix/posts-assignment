@@ -18,12 +18,14 @@
           }"
           placeholder="Your post title"
         />
-        <p
-          *ngIf="!titleInput.valid && (titleInput.dirty || titleInput.touched)"
-          class="help is-danger"
-        >
-          Post title is required
-        </p>
+        <div *ngIf="!titleInput.valid && (titleInput.dirty || titleInput.touched)">
+          <p class="help is-danger" *ngIf="titleInput.errors?.required">
+            Post title is required
+          </p>
+          <p class="help is-danger" *ngIf="titleInput.errors?.minlength">
+            Post title must contain at least 5 characters
+          </p>
+        </div>
       </div>
     </div>
     <div class="field">
@@ -33,8 +35,23 @@
           class="textarea"
           name="body"
           ngModel
+          #bodyArea="ngModel"
+          required
+          minlength="10"
+          [ngClass]="{
+            'is-danger':
+              !bodyArea.valid && (bodyArea.dirty || bodyArea.touched)
+          }"
           placeholder="Your post body"
         ></textarea>
+        <div *ngIf="!bodyArea.valid && (bodyArea.dirty || bodyArea.touched)">
+          <p class="help is-danger" *ngIf="bodyArea.errors?.required">
+            Post body is required
+          </p>
+          <p class="help is-danger" *ngIf="bodyArea.errors?.minlength">
+            Post body must contain at least 10 characters
+          </p>
+        </div>
       </div>
     </div>
     <div class="control">
