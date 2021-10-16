@@ -11,4 +11,11 @@ export class PostsService {
         return this.httpClient.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
     }
 
+    createPost(postData: Post) {
+        return this.httpClient.post("https://jsonplaceholder.typicode.com/posts", {
+            ...postData,
+            userId: 1
+        })
+    }
+
 }

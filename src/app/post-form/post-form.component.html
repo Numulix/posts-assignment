@@ -8,7 +8,7 @@
           type="text"
           class="input"
           name="title"
-          ngModel
+          [(ngModel)]="postData.title"
           #titleInput="ngModel"
           required
           minlength="5"
@@ -18,7 +18,9 @@
           }"
           placeholder="Your post title"
         />
-        <div *ngIf="!titleInput.valid && (titleInput.dirty || titleInput.touched)">
+        <div
+          *ngIf="!titleInput.valid && (titleInput.dirty || titleInput.touched)"
+        >
           <p class="help is-danger" *ngIf="titleInput.errors?.required">
             Post title is required
           </p>
@@ -34,13 +36,12 @@
         <textarea
           class="textarea"
           name="body"
-          ngModel
+          [(ngModel)]="postData.body"
           #bodyArea="ngModel"
           required
           minlength="10"
           [ngClass]="{
-            'is-danger':
-              !bodyArea.valid && (bodyArea.dirty || bodyArea.touched)
+            'is-danger': !bodyArea.valid && (bodyArea.dirty || bodyArea.touched)
           }"
           placeholder="Your post body"
         ></textarea>
@@ -55,7 +56,12 @@
       </div>
     </div>
     <div class="control">
-      <button type="submit" [disabled]="!postForm.valid" class="button is-link">
+      <button
+        type="submit"
+        [ngClass]="{ 'is-loading': loading }"
+        [disabled]="!postForm.valid"
+        class="button is-link"
+      >
         Submit
       </button>
     </div>
