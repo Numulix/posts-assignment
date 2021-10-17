@@ -4,7 +4,7 @@
       <app-post-form (addNewPostToList)="addPostToStart($event)"></app-post-form>
     </div>
     <div class="column">
-      <div *ngFor="let post of posts" class="card post">
+      <div class="card post" *ngFor="let post of posts">
         <div class="card-content">
           <div class="media-content">
             <p class="title is-4">{{ post.title }}</p>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-four-fifths">
+      <div class="card has-background-light">
+        <div class="card-content">
+          <p class="title is-4">{{ post.title }}</p>
+          <div class="content">
+            {{ post.body }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column is-4"></div>
+    <div class="column is-8 block">
+      <div *ngFor="let postComment of postComments" class="box has-background-primary block">
+        <p class="title is-4">{{ postComment.name }}</p>
+        <div class="content">
+          {{ postComment.body }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

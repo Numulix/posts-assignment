@@ -8,12 +8,14 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './services/posts-service.service';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormsModule } from '@angular/forms';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    PostFormComponent
+    PostFormComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
