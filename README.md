@@ -41,7 +41,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [x] The submit button needs to be disabled if the form is invalid
 - [x] Create a method in the service that adds a new post. Check the docs for making an API call.
 - [x] Evaluate API response errors and display them
-- [ ] Create a page for displaying comments for the clicked post
-- [ ] Create a component called CommentsComponent, NOT using the Angular CLI, for displaying all comments for a single post
-- [ ] The route for instantiating this component would be /comments/post/{postId}, where postId should be inserted into the route
+- [x] Create a page for displaying comments for the clicked post
+- [x] Create a component called CommentsComponent, NOT using the Angular CLI, for displaying all comments for a single post
+- [x] The route for instantiating this component would be /comments/post/{postId}, where postId should be inserted into the route
 - [ ] (BONUS) Add a form for a new comment for the post
