@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './services/posts-service.service';
 import { PostFormComponent } from './post-form/post-form.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments/comments.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { ForbiddenTagDirective } from './shared/forbidden-tag.directive';
@@ -25,7 +25,7 @@ import { ForbiddenTagDirective } from './shared/forbidden-tag.directive';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
