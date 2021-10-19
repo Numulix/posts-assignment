@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
-import { Form, NgForm } from '@angular/forms';
+import { Form, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Post } from 'src/models';
 import { PostsService } from '../services/posts-service.service';
+import { forbiddenTagValidator } from '../shared/forbidden-tag.directive';
 
 @Component({
   selector: 'app-post-form',
@@ -19,7 +20,19 @@ export class PostFormComponent implements OnInit {
   public loading: boolean = false;
   public success: boolean = false;
 
-  constructor(private postsService: PostsService) { }
+  postFormEditor = this.fb.group({
+    title: ['', [
+      Validators.required, 
+      Validators.minLength(5)
+    ]],
+    body: ['', [
+      Validators.required,
+      Validators.minLength(10),
+      forbiddenTagValidator()
+    ]]
+  })
+
+  constructor(private postsService: PostsService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

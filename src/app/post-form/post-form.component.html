@@ -1,6 +1,30 @@
-<!-- <div class="box" style="margin: 10px">
+<div class="box" style="margin: 10px">
   <p class="title is-4">New Post</p>
-  <form #postForm="ngForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="postFormEditor" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input type="text" class="input" formControlName="title">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Body</label>
+      <div class="control">
+        <textarea class="textarea" formControlName="body"></textarea>
+      </div>
+    </div>
+    <button
+      type="submit"
+      [ngClass]="{ 'is-loading': loading }"
+      [disabled]="!postFormEditor.valid"
+      class="button is-link"
+    >
+      Submit
+    </button>
+  </form>
+  <p>{{ postFormEditor.value | json }}</p>
+  <p>{{ postFormEditor.status }}</p>
+  <!-- <form #postForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="field">
       <label class="label">Title</label>
       <div class="control">
@@ -73,6 +97,6 @@
         Submit
       </button>
     </div>
-  </form>
+  </form> -->
   <p *ngIf="success" class="is-3 has-text-success">Post has been created!</p>
-</div> -->
+</div>
