@@ -11,8 +11,8 @@
           <div class="media-content">
             <p class="title is-4">{{ post.title }}</p>
           </div>
-          <div class="content">
-            {{ post.body }}
+          <div class="content" [innerHTML]="post.body">
+            <!-- {{ post.body }} -->
             <a class="help is-6" [routerLink]="['/comments', 'post', post.id]"
               >Read comments</a
             >

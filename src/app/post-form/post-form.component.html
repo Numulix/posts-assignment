@@ -39,6 +39,7 @@
           [(ngModel)]="postData.body"
           #bodyArea="ngModel"
           required
+          forbiddenTag
           minlength="10"
           [ngClass]="{
             'is-danger': !bodyArea.valid && (bodyArea.dirty || bodyArea.touched)
@@ -51,6 +52,9 @@
           </p>
           <p class="help is-danger" *ngIf="bodyArea.errors?.minlength">
             Post body must contain at least 10 characters
+          </p>
+          <p class="help is-danger" *ngIf="bodyArea.errors?.forbiddenTag">
+            Post body cannot contain any script tags.
           </p>
         </div>
       </div>

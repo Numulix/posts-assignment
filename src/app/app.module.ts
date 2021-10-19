@@ -9,13 +9,17 @@ import { PostsService } from './services/posts-service.service';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments/comments.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { ForbiddenTagDirective } from './shared/forbidden-tag.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostFormComponent,
-    CommentsComponent
+    CommentsComponent,
+    CommentFormComponent,
+    ForbiddenTagDirective
   ],
   imports: [
     BrowserModule,
