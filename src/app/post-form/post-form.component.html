@@ -11,6 +11,7 @@
           [(ngModel)]="postData.title"
           #titleInput="ngModel"
           required
+          forbiddenTag
           minlength="5"
           [ngClass]="{
             'is-danger':
@@ -26,6 +27,9 @@
           </p>
           <p class="help is-danger" *ngIf="titleInput.errors?.minlength">
             Post title must contain at least 5 characters
+          </p>
+          <p class="help is-danger" *ngIf="titleInput.errors?.forbiddenTag">
+            Post title cannot contain a script tag
           </p>
         </div>
       </div>

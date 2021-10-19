@@ -13,10 +13,10 @@
           </div>
           <div class="content" [innerHTML]="post.body">
             <!-- {{ post.body }} -->
-            <a class="help is-6" [routerLink]="['/comments', 'post', post.id]"
-              >Read comments</a
-            >
           </div>
+          <a class="help is-6" [routerLink]="['/comments', 'post', post.id]"
+            >Read comments</a
+          >
         </div>
       </div>
     </div>
