@@ -23,7 +23,8 @@ export class PostFormComponent implements OnInit {
   postFormEditor = this.fb.group({
     title: ['', [
       Validators.required, 
-      Validators.minLength(5)
+      Validators.minLength(5),
+      forbiddenTagValidator()
     ]],
     body: ['', [
       Validators.required,
@@ -37,22 +38,26 @@ export class PostFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // onSubmit() {
+  //   console.log(this.postForm);
+  //   console.log(this.postData);
+  //   this.loading = true;
+  //   this.postsService.createPost(this.postData).subscribe(
+  //     response => {
+  //       console.log(response);
+  //       this.loading = false;
+  //       this.success = true;
+  //       this.addPostToList(this.postData);
+  //     },
+  //     error => {
+  //       console.log(error.message);
+  //       this.loading = false;
+  //     }
+  //   )
+  // }
+
   onSubmit() {
-    console.log(this.postForm);
-    console.log(this.postData);
-    this.loading = true;
-    this.postsService.createPost(this.postData).subscribe(
-      response => {
-        console.log(response);
-        this.loading = false;
-        this.success = true;
-        this.addPostToList(this.postData);
-      },
-      error => {
-        console.log(error.message);
-        this.loading = false;
-      }
-    )
+    console.log(this.postFormEditor)
   }
 
   addPostToList(post: Post) {

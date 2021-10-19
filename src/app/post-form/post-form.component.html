@@ -4,9 +4,27 @@
     <div class="field">
       <label class="label">Title</label>
       <div class="control">
-        <input type="text" class="input" formControlName="title">
+        <input type="text" class="input" formControlName="title" />
       </div>
     </div>
+    <div
+      *ngIf="
+        !postFormEditor.get('title')?.valid &&
+        (postFormEditor.get('title')?.touched ||
+          postFormEditor.get('title')?.dirty)
+      "
+    >
+      <p class="help is-danger" *ngIf="postFormEditor.get('title')?.hasError('required')">
+        Post title is required
+      </p>
+      <p class="help is-danger" *ngIf="postFormEditor.get('title')?.hasError('minlength')">
+        Post title must contain at least 5 characters.
+      </p>
+      <p class="help is-danger" *ngIf="postFormEditor.get('title')?.hasError('forbiddenTag')">
+        Post title must not contain a script tag.
+      </p>
+    </div>
+
     <div class="field">
       <label class="label">Body</label>
       <div class="control">
